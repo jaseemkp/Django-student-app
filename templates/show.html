@@ -1,0 +1,15 @@
+<!doctype html>
+
+<div class=metanav>
+<p><a href="/">Home</a></p>
+</div>
+<h1>STUDENTS DETAILS</h1>
+{% block body %}
+  <ul class=entries>
+  {% for entry in entries %}
+    <li>{{ entry.name }} {{entry.age|safe}} {{entry.sex|safe}} {{entry.mark|safe}}
+  {% empty %}
+    <li><em><center>Unbelievable.  No entries here so far...!</em></center>
+  {% endfor %}
+  </ul>
+{% endblock %}
